@@ -35,8 +35,9 @@ Route::get('/', function () {
 
 Route::get('/', function () {
     return Inertia::render('auth/Login');
-});
-Route::prefix('administrator')->group(function () {
+})->name('login_page');
+
+Route::middleware('auth:sanctum')->prefix('administrator')->group(function () {
     Route::get('/dashboard', function () {
         return Inertia::render('dashboard/page');
     });

@@ -8,7 +8,7 @@ import EditTnventorySection from "./sections/edit-inventory-section";
 import MainLayout from "../layout";
 // import DeleteInventorySection from "./sections/delete-inventory-section";
 
-export default function InventoryPage() {
+export default function InventoryPage({auth}) {
     const { inventories } = useSelector((state) => state.inventory);
     const columns = [
         {
