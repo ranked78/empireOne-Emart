@@ -39,10 +39,10 @@ Route::get('/', function () {
 
 Route::middleware('auth:sanctum')->prefix('administrator')->group(function () {
     Route::get('/dashboard', function () {
-        return Inertia::render('dashboard/page');
+        return Inertia::render('administrator/dashboard/page');
     });
     Route::get('/inventory', function () {
-        return Inertia::render('inventory/page');
+        return Inertia::render('administrator/inventory/page');
     });
 });
 

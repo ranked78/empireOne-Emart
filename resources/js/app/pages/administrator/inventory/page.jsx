@@ -5,7 +5,8 @@ import store from "@/app/store/store";
 import { get_inventory_thunk } from "./redux/inventory-thunk";
 import { useSelector } from "react-redux";
 import EditTnventorySection from "./sections/edit-inventory-section";
-import MainLayout from "../layout";
+import MainLayout from "../../layout";
+
 // import DeleteInventorySection from "./sections/delete-inventory-section";
 
 export default function InventoryPage({auth}) {

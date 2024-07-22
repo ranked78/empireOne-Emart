@@ -1,7 +1,7 @@
 
 import { configureStore } from '@reduxjs/toolkit';
 import appSlice from '../redux/app-slice';
-import inventorySlice from '../pages/inventory/redux/inventory-slice';
+import inventorySlice from '../pages/administrator/inventory/redux/inventory-slice';
 const store = configureStore({
     reducer: {
          app: appSlice,

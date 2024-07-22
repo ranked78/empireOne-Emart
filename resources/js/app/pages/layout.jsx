@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import TopNavbarSection from "./_sections/top-navbar-section";
+import TopNavbarSection from "./administrator/_sections/top-navbar-section";
 import store from "../store/store";
 import { get_user_thunk } from "../redux/app-thunk";
 
