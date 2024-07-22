@@ -1,6 +1,7 @@
 import {
     add_inventory_service,
     get_inventory_service,
+    update_inventory_service,
 } from "@/app/services/inventory-service";
 import { indexSlice } from "./index-slice";
 
@@ -26,3 +27,14 @@ export function get_inventory_thunk() {
         );
     };
 }
+
+export function update_inventory_thunk() {
+    return async function (dispatch, getState) {
+        const updateForm = getState().index.updateForm;
+        const response = await update_inventory_service(updateForm);
+        await dispatch(
+            indexSlice.actions.setInventories(response.result)
+        );
+    };
+}
+

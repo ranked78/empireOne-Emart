@@ -18,3 +18,12 @@ export async function get_inventory_service(data) {
         return error;
     }
 }
+
+export async function update_inventory_service(data) {
+    try {
+        const res = await axios.put("/api/inventory/"+data.id,data);
+        return res.data;
+    } catch (error) {
+        return error;
+    }
+}

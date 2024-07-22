@@ -2,19 +2,34 @@ import Input from "@/app/components/input";
 import Modal from "@/app/components/modal";
 import Select from "@/app/components/select";
 import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setUpdateForm } from "../redux/index-slice";
+import store from "@/app/store/store";
+import { update_inventory_thunk } from "../redux/index-thunk";
 
-export default function EditTnventorySection({datas}) {
+export default function EditTnventorySection({ datas }) {
     const [open, setOpen] = useState(false);
-    const [data, setData] = useState({});
-    useEffect(()=>{
-        setData(datas)
-    },[])
-    function submit_event(params) {
-        
+    const { updateForm } = useSelector((state) => state.index);
+    // const [data, setUpdateForm] = useState({});
+    const dispatch = useDispatch();
+    useEffect(() => {
+        if (open) {
+            dispatch(setUpdateForm(datas));
+        } else {
+            dispatch(setUpdateForm({}));
+        }
+    }, [open]);
+    function submit_event(e) {
+        e.preventDefault();
+        store.dispatch(update_inventory_thunk());
+        setOpen(false);
     }
     return (
         <div>
-            <button className="text-blue-600" onClick={() => setOpen(!open)}>
+            <button
+                className="text-blue-600 hover:text-blue-500"
+                onClick={() => setOpen(!open)}
+            >
                 Edit
             </button>
             <Modal width="max-w-3xl" open={open} setOpen={setOpen}>
@@ -32,13 +47,15 @@ export default function EditTnventorySection({datas}) {
                                 { value: "Mouse", label: "Mouse" },
                                 { value: "Keyboard", label: "Keyboard" },
                             ]}
-                            value={data?.equipment_type ?? ""}
+                            value={updateForm?.equipment_type ?? ""}
                             name="equipment_type"
                             onChange={(e) =>
-                                setData({
-                                    ...data,
-                                    equipment_type: e.target.value,
-                                })
+                                dispatch(
+                                    setUpdateForm({
+                                        ...updateForm,
+                                        equipment_type: e.target.value,
+                                    })
+                                )
                             }
                             label="Equipment Type"
                         />
@@ -49,13 +66,15 @@ export default function EditTnventorySection({datas}) {
                                 { value: "San Carlos", label: "San Carlos" },
                                 { value: "Carcar", label: "Carcar" },
                             ]}
-                            value={data?.site ?? ""}
+                            value={updateForm?.site ?? ""}
                             name="site"
                             onChange={(e) =>
-                                setData({
-                                    ...data,
-                                    site: e.target.value,
-                                })
+                                dispatch(
+                                    setUpdateForm({
+                                        ...updateForm,
+                                        site: e.target.value,
+                                    })
+                                )
                             }
                             label="Site"
                         />
@@ -64,38 +83,44 @@ export default function EditTnventorySection({datas}) {
                         <Input
                             type="text"
                             onChange={(e) =>
-                                setData({
-                                    ...data,
-                                    [e.target.name]: e.target.value,
-                                })
+                                dispatch(
+                                    setUpdateForm({
+                                        ...updateForm,
+                                        [e.target.name]: e.target.value,
+                                    })
+                                )
                             }
                             label="Assigned"
-                            value={data?.assigned ?? ""}
+                            value={updateForm?.assigned ?? ""}
                             name="assigned"
                         />
                         <Input
                             type="text"
                             onChange={(e) =>
-                                setData({
-                                    ...data,
-                                    [e.target.name]: e.target.value,
-                                })
+                                dispatch(
+                                    setUpdateForm({
+                                        ...updateForm,
+                                        [e.target.name]: e.target.value,
+                                    })
+                                )
                             }
                             label="Brand"
-                            value={data?.brand ?? ""}
+                            value={updateForm?.brand ?? ""}
                             name="brand"
                         />
 
                         <Input
                             type="text"
                             onChange={(e) =>
-                                setData({
-                                    ...data,
-                                    [e.target.name]: e.target.value,
-                                })
+                                dispatch(
+                                    setUpdateForm({
+                                        ...updateForm,
+                                        [e.target.name]: e.target.value,
+                                    })
+                                )
                             }
                             label="Model"
-                            value={data?.model ?? ""}
+                            value={updateForm?.model ?? ""}
                             name="model"
                         />
                     </div>
@@ -104,25 +129,29 @@ export default function EditTnventorySection({datas}) {
                         <Input
                             type="text"
                             onChange={(e) =>
-                                setData({
-                                    ...data,
-                                    [e.target.name]: e.target.value,
-                                })
+                                dispatch(
+                                    setUpdateForm({
+                                        ...updateForm,
+                                        [e.target.name]: e.target.value,
+                                    })
+                                )
                             }
                             label="Serial"
-                            value={data?.serial ?? ""}
+                            value={updateForm?.serial ?? ""}
                             name="serial"
                         />
                         <Input
                             type="text"
                             onChange={(e) =>
-                                setData({
-                                    ...data,
-                                    [e.target.name]: e.target.value,
-                                })
+                                dispatch(
+                                    setUpdateForm({
+                                        ...updateForm,
+                                        [e.target.name]: e.target.value,
+                                    })
+                                )
                             }
                             label="Account"
-                            value={data?.account ?? ""}
+                            value={updateForm?.account ?? ""}
                             name="account"
                         />
                     </div>
@@ -130,25 +159,29 @@ export default function EditTnventorySection({datas}) {
                         <Input
                             type="text"
                             onChange={(e) =>
-                                setData({
-                                    ...data,
-                                    [e.target.name]: e.target.value,
-                                })
+                                dispatch(
+                                    setUpdateForm({
+                                        ...updateForm,
+                                        [e.target.name]: e.target.value,
+                                    })
+                                )
                             }
                             label="Status"
-                            value={data?.status ?? ""}
+                            value={updateForm?.status ?? ""}
                             name="status"
                         />
                         <Input
                             type="text"
                             onChange={(e) =>
-                                setData({
-                                    ...data,
-                                    [e.target.name]: e.target.value,
-                                })
+                                dispatch(
+                                    setUpdateForm({
+                                        ...updateForm,
+                                        [e.target.name]: e.target.value,
+                                    })
+                                )
                             }
                             label="Account"
-                            value={data?.acount ?? ""}
+                            value={updateForm?.acount ?? ""}
                             name="acount"
                         />
                     </div>
@@ -156,25 +189,29 @@ export default function EditTnventorySection({datas}) {
                         <Input
                             type="number"
                             onChange={(e) =>
-                                setData({
-                                    ...data,
-                                    [e.target.name]: e.target.value,
-                                })
+                                dispatch(
+                                    setUpdateForm({
+                                        ...updateForm,
+                                        [e.target.name]: e.target.value,
+                                    })
+                                )
                             }
                             label="Cost"
-                            value={data?.cost ?? ""}
+                            value={updateForm?.cost ?? ""}
                             name="cost"
                         />
                         <Input
                             type="date"
                             onChange={(e) =>
-                                setData({
-                                    ...data,
-                                    [e.target.name]: e.target.value,
-                                })
+                                dispatch(
+                                    setUpdateForm({
+                                        ...updateForm,
+                                        [e.target.name]: e.target.value,
+                                    })
+                                )
                             }
                             label="Date Received"
-                            value={data?.date_received ?? ""}
+                            value={updateForm?.date_received ?? ""}
                             name="date_received"
                         />
                     </div>
@@ -188,8 +225,7 @@ export default function EditTnventorySection({datas}) {
                         </button>
                         <button
                             type="button"
-                            data-autofocus
-                            onClick={() => setIsModalOpen(false)}
+                            onClick={() => setOpen(false)}
                             className="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
                         >
                             Cancel

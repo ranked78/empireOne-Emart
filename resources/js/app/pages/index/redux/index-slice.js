@@ -7,7 +7,8 @@ export const indexSlice = createSlice({
     name: "index",
     initialState: {
         inventoryForm: {},
-        inventories:[]
+        inventories:[],
+        updateForm:{}
     },
     reducers: {
         setInventoryForm: (state, action) => {
@@ -16,8 +17,14 @@ export const indexSlice = createSlice({
         setInventories: (state, action) => {
             state.inventories = action.payload;
         },
+        setUpdateForm:(state, action) => {
+            state.updateForm = action.payload;
+        },
     },
 });
-export const { setInventoryForm,setInventories } = indexSlice.actions;
+export const { 
+    setInventoryForm,
+    setInventories,
+    setUpdateForm } = indexSlice.actions;
 
 export default indexSlice.reducer;

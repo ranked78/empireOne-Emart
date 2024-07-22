@@ -1,4 +1,3 @@
-
 import Table from "@/app/components/table";
 import React, { useEffect, useState } from "react";
 import CreateInventorySection from "./sections/create-inventory-section";
@@ -6,6 +5,7 @@ import store from "@/app/store/store";
 import { get_inventory_thunk } from "./redux/index-thunk";
 import { useSelector } from "react-redux";
 import EditTnventorySection from "./sections/edit-inventory-section";
+import DeleteInventorySection from "./sections/delete-inventory-section";
 
 export default function IndexPage() {
     const { inventories } = useSelector((state) => state.index);
@@ -51,17 +51,22 @@ export default function IndexPage() {
             key: "action",
         },
     ];
-    const data =inventories.map(res=>({
+    const data = inventories.map((res) => ({
         ...res,
-        action:(<EditTnventorySection datas={res}/>)
+        action: (
+            <div className="flex gap-4">
+                <EditTnventorySection datas={res} />
+                {/* <DeleteInventorySection datas={res} /> */}
+            </div>
+        ),
     }));
 
-    useEffect(()=>{
-        store.dispatch(get_inventory_thunk())
-    },[])
+    useEffect(() => {
+        store.dispatch(get_inventory_thunk());
+    }, []);
     return (
         <div className="m-3">
-           <CreateInventorySection />
+            <CreateInventorySection />
             <Table columns={columns} data={data} />
         </div>
     );
