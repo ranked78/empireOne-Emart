@@ -4,14 +4,14 @@ import Modal from "@/app/components/modal";
 import Select from "@/app/components/select";
 import store from "@/app/store/store";
 import React, { useState } from "react";
-import { add_inventory_thunk } from "../redux/index-thunk";
+import { add_inventory_thunk } from "../redux/inventory-thunk";
 import { useDispatch, useSelector } from "react-redux";
-import { setInventoryForm } from "../redux/index-slice";
+import { setInventoryForm } from "../redux/inventory-slice";
 
 export default function CreateInventorySection() {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const dispatch = useDispatch();
-    const { inventoryForm } = useSelector((state) => state.index);
+    const { inventoryForm } = useSelector((state) => state.inventory);
 
     function submit_event(e) {
         e.preventDefault();

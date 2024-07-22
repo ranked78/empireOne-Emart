@@ -29,9 +29,22 @@ Route::get('/', function () {
 //     return Inertia::render('Dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
+// Route::get('/', function () {
+//     return Inertia::render('index/page');
+// });
+
 Route::get('/', function () {
-    return Inertia::render('index/page');
+    return Inertia::render('auth/Login');
 });
+Route::prefix('administrator')->group(function () {
+    Route::get('/dashboard', function () {
+        return Inertia::render('dashboard/page');
+    });
+    Route::get('/inventory', function () {
+        return Inertia::render('inventory/page');
+    });
+});
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -39,4 +52,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

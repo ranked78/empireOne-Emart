@@ -2,13 +2,14 @@ import Table from "@/app/components/table";
 import React, { useEffect, useState } from "react";
 import CreateInventorySection from "./sections/create-inventory-section";
 import store from "@/app/store/store";
-import { get_inventory_thunk } from "./redux/index-thunk";
+import { get_inventory_thunk } from "./redux/inventory-thunk";
 import { useSelector } from "react-redux";
 import EditTnventorySection from "./sections/edit-inventory-section";
-import DeleteInventorySection from "./sections/delete-inventory-section";
+import MainLayout from "../layout";
+// import DeleteInventorySection from "./sections/delete-inventory-section";
 
-export default function IndexPage() {
-    const { inventories } = useSelector((state) => state.index);
+export default function InventoryPage() {
+    const { inventories } = useSelector((state) => state.inventory);
     const columns = [
         {
             title: "Equipment Type",
@@ -33,6 +34,10 @@ export default function IndexPage() {
         {
             title: "Account",
             key: "account",
+        },
+        {
+            title: "Site",
+            key: "site",
         },
         {
             title: "Status",
@@ -65,9 +70,11 @@ export default function IndexPage() {
         store.dispatch(get_inventory_thunk());
     }, []);
     return (
-        <div className="m-3">
-            <CreateInventorySection />
-            <Table columns={columns} data={data} />
-        </div>
+        <MainLayout>
+            <div className="m-3">
+                <CreateInventorySection />
+                <Table columns={columns} data={data} />
+            </div>
+        </MainLayout>
     );
 }

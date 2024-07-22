@@ -3,13 +3,13 @@ import Modal from "@/app/components/modal";
 import Select from "@/app/components/select";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setUpdateForm } from "../redux/index-slice";
+import { setUpdateForm } from "../redux/inventory-slice";
 import store from "@/app/store/store";
-import { update_inventory_thunk } from "../redux/index-thunk";
+import { update_inventory_thunk } from "../redux/inventory-thunk";
 
 export default function EditTnventorySection({ datas }) {
     const [open, setOpen] = useState(false);
-    const { updateForm } = useSelector((state) => state.index);
+    const { updateForm } = useSelector((state) => state.inventory);
     // const [data, setUpdateForm] = useState({});
     const dispatch = useDispatch();
     useEffect(() => {

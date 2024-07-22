@@ -3,37 +3,34 @@ import {
     get_inventory_service,
     update_inventory_service,
 } from "@/app/services/inventory-service";
-import { indexSlice } from "./index-slice";
+import { inventorySlice } from "./inventory-slice";
 
 export function add_inventory_thunk() {
     return async function (dispatch, getState) {
-        const data = getState().index.inventoryForm;
+        const data = getState().inventory.inventoryForm;
         const response = await add_inventory_service(data);
         await dispatch(
-            indexSlice.actions.setInventories(response.result)
+            inventorySlice.actions.setInventories(response.result)
         );
     };
 }
 
 export function get_inventory_thunk() {
     return async function (dispatch, getState) {
-        const inventories = getState().index.inventories;
+        const inventories = getState().inventory.inventories;
         const response = await get_inventory_service();
         await dispatch(
-            indexSlice.actions.setInventories([
-                ...inventories,
-                ...response.result,
-            ])
+            inventorySlice.actions.setInventories(response.result)
         );
     };
 }
 
 export function update_inventory_thunk() {
     return async function (dispatch, getState) {
-        const updateForm = getState().index.updateForm;
+        const updateForm = getState().inventory.updateForm;
         const response = await update_inventory_service(updateForm);
         await dispatch(
-            indexSlice.actions.setInventories(response.result)
+            inventorySlice.actions.setInventories(response.result)
         );
     };
 }

@@ -3,8 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const path = window.location.hash.substring(1); // Get the hash without the first character
 const hash = path.split("&")[0];
 
-export const indexSlice = createSlice({
-    name: "index",
+export const inventorySlice = createSlice({
+    name: "inventory",
     initialState: {
         inventoryForm: {},
         inventories:[],
@@ -25,6 +25,6 @@ export const indexSlice = createSlice({
 export const { 
     setInventoryForm,
     setInventories,
-    setUpdateForm } = indexSlice.actions;
+    setUpdateForm } = inventorySlice.actions;
 
-export default indexSlice.reducer;
+export default inventorySlice.reducer;

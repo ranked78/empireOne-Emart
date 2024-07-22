@@ -1,11 +1,11 @@
 
 import { configureStore } from '@reduxjs/toolkit';
 import appSlice from '../redux/app-slice';
-import indexSlice from '../pages/index/redux/index-slice';
+import inventorySlice from '../pages/inventory/redux/inventory-slice';
 const store = configureStore({
     reducer: {
          app: appSlice,
-         index:indexSlice
+         inventory:inventorySlice
     },
 });
 

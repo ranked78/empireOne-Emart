@@ -14,7 +14,7 @@ class InventoryController extends Controller
             'result' => $inventories
         ], 200);
     }
-    public function store(Request $request, $id)
+    public function store(Request $request)
     {
         Inventory::create($request->all());
         $inventories = Inventory::get();
