@@ -5,12 +5,13 @@ import store from "@/app/store/store";
 import { get_inventory_thunk } from "./redux/inventory-thunk";
 import { useSelector } from "react-redux";
 import EditTnventorySection from "./sections/edit-inventory-section";
-import MainLayout from "../../layout";
+import MainLayout from "../layout";
 
 // import DeleteInventorySection from "./sections/delete-inventory-section";
 
-export default function InventoryPage({auth}) {
+export default function InventoryPage({ auth }) {
     const { inventories } = useSelector((state) => state.inventory);
+    const [dataChecked, setDataChecked] = useState([]);
     const columns = [
         {
             title: "Equipment Type",
@@ -74,7 +75,13 @@ export default function InventoryPage({auth}) {
         <MainLayout>
             <div className="m-3">
                 <CreateInventorySection />
-                <Table columns={columns} data={data} />
+                <Table
+                    setDataChecked={setDataChecked}
+                    dataChecked={dataChecked}
+                    columns={columns}
+                    data={data}
+                    isCheckbox={true}
+                />
             </div>
         </MainLayout>
     );

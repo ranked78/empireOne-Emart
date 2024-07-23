@@ -18,10 +18,12 @@ export default function CreateInventorySection() {
         store.dispatch(add_inventory_thunk(inventoryForm));
         setIsModalOpen(false);
     }
-    
+
     return (
         <div>
             <Button
+                type="button"
+                loading={false}
                 className="my-3"
                 onClick={() => setIsModalOpen(!isModalOpen)}
             >

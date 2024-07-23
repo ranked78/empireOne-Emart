@@ -7,13 +7,20 @@ export const appSlice = createSlice({
     name: "app",
     initialState: {
         user: {},
+        sidebarOpen:false,
     },
     reducers: {
         setUser: (state, action) => {
             state.user = action.payload;
         },
+        setSidebarOpen: (state, action) => {
+            state.sidebarOpen = !state.sidebarOpen;
+        },
     },
 });
-export const { setUser } = appSlice.actions;
+export const { 
+    setUser,
+    setSidebarOpen
+ } = appSlice.actions;
 
 export default appSlice.reducer;
