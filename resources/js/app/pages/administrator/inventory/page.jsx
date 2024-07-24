@@ -73,16 +73,14 @@ export default function InventoryPage({ auth }) {
     }, []);
     return (
         <MainLayout>
-            <div className="m-3">
-                <CreateInventorySection />
-                <Table
-                    setDataChecked={setDataChecked}
-                    dataChecked={dataChecked}
-                    columns={columns}
-                    data={data}
-                    isCheckbox={true}
-                />
-            </div>
+            <CreateInventorySection />
+            <Table
+                setDataChecked={setDataChecked}
+                dataChecked={dataChecked}
+                columns={columns}
+                data={data}
+                isCheckbox={true}
+            />
         </MainLayout>
     );
 }
