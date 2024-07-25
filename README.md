@@ -68,4 +68,4 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 ## Tailwind
 
-Hero Icon [https://heroicons.com/]
+[Hero Icon](https://heroicons.com/)
