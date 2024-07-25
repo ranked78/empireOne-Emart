@@ -8,6 +8,7 @@ import {
 } from "@heroicons/react/20/solid";
 import { setSidebarOpen } from "@/app/redux/app-slice";
 
+
 export default function Topbar() {
     const dispatch = useDispatch();
 
@@ -97,12 +98,12 @@ export default function Topbar() {
                             >
                                 {userNavigation.map((item) => (
                                     <MenuItem key={item.name}>
-                                        <a
+                                        <button
                                             href={item.href}
                                             className="block px-3 py-1 text-sm leading-6 text-gray-900 data-[focus]:bg-gray-50"
                                         >
                                             {item.name}
-                                        </a>
+                                        </button>
                                     </MenuItem>
                                 ))}
                             </MenuItems>
