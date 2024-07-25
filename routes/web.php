@@ -34,6 +34,9 @@ Route::get('/', function () {
 // });
 
 Route::get('/', function () {
+    if (Auth::check()) {
+        return redirect('/administrator/dashboard');
+    }
     return Inertia::render('auth/Login');
 })->name('login_page');
 
