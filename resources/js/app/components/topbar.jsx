@@ -7,6 +7,7 @@ import {
     MagnifyingGlassIcon,
 } from "@heroicons/react/20/solid";
 import { setSidebarOpen } from "@/app/redux/app-slice";
+import LogoutButton from "./logout-button";
 
 
 export default function Topbar() {
@@ -106,6 +107,7 @@ export default function Topbar() {
                                         </button>
                                     </MenuItem>
                                 ))}
+                                <LogoutButton/>
                             </MenuItems>
                         </Menu>
                     </div>
