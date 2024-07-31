@@ -7,6 +7,7 @@ import {
     MagnifyingGlassIcon,
 } from "@heroicons/react/20/solid";
 import { setSidebarOpen } from "@/app/redux/app-slice";
+import { Link } from "@inertiajs/react";
 
 
 export default function Topbar() {
@@ -14,8 +15,9 @@ export default function Topbar() {
 
     const userNavigation = [
         { name: "Your profile", href: "#" },
-        { name: "Sign out", href: "#" },
+        { name: "Sign out", component: 'button' },
     ];
+
     return (
         <>
             <div className="sticky top-0 z-10 flex h-16 shrink-0 items-center gap-x-4 border-b border-gray-200 bg-white px-4 shadow-sm sm:gap-x-6 sm:px-6 lg:px-8">
@@ -98,12 +100,19 @@ export default function Topbar() {
                             >
                                 {userNavigation.map((item) => (
                                     <MenuItem key={item.name}>
-                                        <button
-                                            href={item.href}
-                                            className="block px-3 py-1 text-sm leading-6 text-gray-900 data-[focus]:bg-gray-50"
-                                        >
-                                            {item.name}
-                                        </button>
+                                        {item.component === 'button' ? (
+                                            <Link
+                                                method="post"
+                                                as="button"
+                                                href={route("logout")}
+                                                className="block px-3 py-1 text-sm leading-6 text-gray-900 data-[focus]:bg-gray-50">
+                                                {item.name}
+                                            </Link>
+                                        ) : (
+                                            <a href={item.href} className="block px-3 py-1 text-sm leading-6 text-gray-900 data-[focus]:bg-gray-50">
+                                                {item.name}
+                                            </a>
+                                        )}
                                     </MenuItem>
                                 ))}
                             </MenuItems>
