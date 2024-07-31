@@ -115,7 +115,6 @@ export default function Topbar() {
                                         )}
                                     </MenuItem>
                                 ))}
-                                {/* <LogoutButton/> */}
                             </MenuItems>
                         </Menu>
                     </div>
