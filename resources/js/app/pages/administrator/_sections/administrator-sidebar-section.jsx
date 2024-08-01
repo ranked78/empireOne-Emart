@@ -7,6 +7,7 @@ import {
     FolderIcon,
     HomeIcon,
     UsersIcon,
+    CalendarDaysIcon
 } from "@heroicons/react/24/outline";
 
 export default function AdministratorSidebarSection() {
@@ -33,6 +34,12 @@ export default function AdministratorSidebarSection() {
             current: false,
         },
         { name: "Reports", href: "#", icon: ChartPieIcon, current: false },
+        {
+            name: "Events",
+            href: "/administrator/events",
+            icon: CalendarDaysIcon,
+            current: path == "events",
+        }
     ];
     return (
         <>

@@ -7,12 +7,14 @@ import {
     MagnifyingGlassIcon,
 } from "@heroicons/react/20/solid";
 import { setSidebarOpen } from "@/app/redux/app-slice";
-import { Link } from "@inertiajs/react";
+import { Link,usePage } from "@inertiajs/react";
 
 
 export default function Topbar() {
     const dispatch = useDispatch();
 
+    const { auth: { user } } = usePage().props;
+    
     const userNavigation = [
         { name: "Your profile", href: "#" },
         { name: "Sign out", component: 'button' },
@@ -86,7 +88,7 @@ export default function Topbar() {
                                         aria-hidden="true"
                                         className="ml-4 text-sm font-semibold leading-6 text-gray-900"
                                     >
-                                        Tom Cook
+                                        {user.name}
                                     </span>
                                     <ChevronDownIcon
                                         aria-hidden="true"
