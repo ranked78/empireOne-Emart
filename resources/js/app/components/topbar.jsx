@@ -7,7 +7,7 @@ import {
     MagnifyingGlassIcon,
 } from "@heroicons/react/20/solid";
 import { setSidebarOpen } from "@/app/redux/app-slice";
-import { Link,usePage } from "@inertiajs/react";
+import { Link, usePage } from "@inertiajs/react";
 
 
 export default function Topbar() {
