@@ -4,10 +4,11 @@ import MainLayout from '../layout';
 export default function EventsPage() {
     return (
         <MainLayout>
+            
             <div className='flex flex-wrap gap-4 place-content-center mt-12'>
                 <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                     <a href="#">
-                        <img className="rounded-t-lg" src="https://scontent.fmnl25-2.fna.fbcdn.net/v/t39.30808-6/297470945_599635615127089_8780317520782444251_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeGd4BYIhzW3QBO550ILhn4jScf1qa1XKQpJx_WprVcpCry1UN32-lRTaGqXqsqHq0QBzS8gBZ-JVbdlufcaRHR3&_nc_ohc=vzwbrC3c-fgQ7kNvgEzECQu&_nc_ht=scontent.fmnl25-2.fna&oh=00_AYAEtZUmGwAhTZObGUW80fVA9iaPJBxFYi_2X6b1aoFdNg&oe=66B6C4B3" alt="" />
+                        <img className="rounded-t-lg" src="https://empireonecontactcenter.com/wp-content/uploads/2023/03/Contact-Center-logo.png" alt="" />
                     </a>
                     <div className="p-5">
                         <a href="#">
@@ -22,7 +23,7 @@ export default function EventsPage() {
 
                 <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                     <a href="#">
-                        <img className="rounded-t-lg" src="https://scontent.fmnl25-2.fna.fbcdn.net/v/t39.30808-6/297470945_599635615127089_8780317520782444251_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeGd4BYIhzW3QBO550ILhn4jScf1qa1XKQpJx_WprVcpCry1UN32-lRTaGqXqsqHq0QBzS8gBZ-JVbdlufcaRHR3&_nc_ohc=vzwbrC3c-fgQ7kNvgEzECQu&_nc_ht=scontent.fmnl25-2.fna&oh=00_AYAEtZUmGwAhTZObGUW80fVA9iaPJBxFYi_2X6b1aoFdNg&oe=66B6C4B3" alt="" />
+                        <img className="rounded-t-lg" src="https://empireonecontactcenter.com/wp-content/uploads/2023/03/Contact-Center-logo.png" alt="" />
                     </a>
                     <div className="p-5">
                         <a href="#">
@@ -37,7 +38,7 @@ export default function EventsPage() {
 
                 <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                     <a href="#">
-                        <img className="rounded-t-lg" src="https://scontent.fmnl25-2.fna.fbcdn.net/v/t39.30808-6/297470945_599635615127089_8780317520782444251_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeGd4BYIhzW3QBO550ILhn4jScf1qa1XKQpJx_WprVcpCry1UN32-lRTaGqXqsqHq0QBzS8gBZ-JVbdlufcaRHR3&_nc_ohc=vzwbrC3c-fgQ7kNvgEzECQu&_nc_ht=scontent.fmnl25-2.fna&oh=00_AYAEtZUmGwAhTZObGUW80fVA9iaPJBxFYi_2X6b1aoFdNg&oe=66B6C4B3" alt="" />
+                        <img className="rounded-t-lg" src="https://empireonecontactcenter.com/wp-content/uploads/2023/03/Contact-Center-logo.png" alt="" />
                     </a>
                     <div className="p-5">
                         <a href="#">
@@ -52,7 +53,7 @@ export default function EventsPage() {
                 
                 <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                     <a href="#">
-                        <img className="rounded-t-lg" src="https://scontent.fmnl25-2.fna.fbcdn.net/v/t39.30808-6/297470945_599635615127089_8780317520782444251_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeGd4BYIhzW3QBO550ILhn4jScf1qa1XKQpJx_WprVcpCry1UN32-lRTaGqXqsqHq0QBzS8gBZ-JVbdlufcaRHR3&_nc_ohc=vzwbrC3c-fgQ7kNvgEzECQu&_nc_ht=scontent.fmnl25-2.fna&oh=00_AYAEtZUmGwAhTZObGUW80fVA9iaPJBxFYi_2X6b1aoFdNg&oe=66B6C4B3" alt="" />
+                        <img className="rounded-t-lg" src="https://empireonecontactcenter.com/wp-content/uploads/2023/03/Contact-Center-logo.png" alt="" />
                     </a>
                     <div className="p-5">
                         <a href="#">
@@ -67,7 +68,7 @@ export default function EventsPage() {
 
                 <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                     <a href="#">
-                        <img className="rounded-t-lg" src="https://scontent.fmnl25-2.fna.fbcdn.net/v/t39.30808-6/297470945_599635615127089_8780317520782444251_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeGd4BYIhzW3QBO550ILhn4jScf1qa1XKQpJx_WprVcpCry1UN32-lRTaGqXqsqHq0QBzS8gBZ-JVbdlufcaRHR3&_nc_ohc=vzwbrC3c-fgQ7kNvgEzECQu&_nc_ht=scontent.fmnl25-2.fna&oh=00_AYAEtZUmGwAhTZObGUW80fVA9iaPJBxFYi_2X6b1aoFdNg&oe=66B6C4B3" alt="" />
+                        <img className="rounded-t-lg" src="https://empireonecontactcenter.com/wp-content/uploads/2023/03/Contact-Center-logo.png" alt="" />
                     </a>
                     <div className="p-5">
                         <a href="#">
