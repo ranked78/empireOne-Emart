@@ -7,7 +7,10 @@ import {
     FolderIcon,
     HomeIcon,
     UsersIcon,
-    CalendarDaysIcon
+    CalendarDaysIcon,
+    GiftIcon,
+    ChatBubbleLeftRightIcon,
+    NewspaperIcon
 } from "@heroicons/react/24/outline";
 
 export default function AdministratorSidebarSection() {
@@ -25,6 +28,9 @@ export default function AdministratorSidebarSection() {
             icon: UsersIcon,
             current: path == "inventory",
         },
+        { name: "Account Rewards", href: "#", icon: GiftIcon, current: false },
+        { name: "Engagement Activities", href: "#", icon: ChatBubbleLeftRightIcon, current: false },
+        { name: "News Feed", href: "#", icon: NewspaperIcon, current: false },
         { name: "Projects", href: "#", icon: FolderIcon, current: false },
         { name: "Calendar", href: "#", icon: CalendarIcon, current: false },
         {
