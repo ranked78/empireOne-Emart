@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import MainLayout from '../layout';
 import Events from '@/app/components/Events';
-import AddEvent from '@/app/pages/administrator/_sections/add-event';
-import { get_events_service } from '@/app/services/events-service';
-
+import AddEvent from '../_sections/add-event';
+import { fetch_events_thunk } from './redux/events-thunk';
 
 export default function EventsPage() {
-    const [events, setEvents] = useState([]);
+    const dispatch = useDispatch();
+    const { events } = useSelector((state) => state.events);
     const [isPopupOpen, setIsPopupOpen] = useState(false);
 
     const handleOpenPopup = (e) => {
@@ -18,19 +19,14 @@ export default function EventsPage() {
         setIsPopupOpen(false);
     };
 
-    const fetchEvents = async () => {
-        const data = await get_events_service();
-        setEvents(data.result);
+    const handleEventAdded = () => {
+        dispatch(fetch_events_thunk()); // Refresh the event list after an event is added
+        handleClosePopup(); // Optionally close the popup
     };
 
     useEffect(() => {
-        fetchEvents(); // Fetch events initially
-    }, []);
-
-    const handleEventAdded = () => {
-        fetchEvents(); // Refresh the event list after an event is added
-        handleClosePopup(); // Optionally close the popup
-    };
+        dispatch(fetch_events_thunk()); // Fetch events initially
+    }, [dispatch]);
 
     return (
         <MainLayout>

@@ -2,10 +2,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 import appSlice from '../redux/app-slice';
 import inventorySlice from '../pages/administrator/inventory/redux/inventory-slice';
+import eventsSlice from '../pages/administrator/events/redux/events-slice';
 const store = configureStore({
     reducer: {
          app: appSlice,
-         inventory:inventorySlice
+         inventory:inventorySlice,
+         events: eventsSlice,
     },
 });
 
