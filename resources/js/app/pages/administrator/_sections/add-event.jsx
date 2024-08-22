@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { add_events_service } from "../services/events-service";
+import { add_events_service } from "../../../services/events-service";
 
 const AddEvent = ({ isOpen, onClose, onEventAdded }) => {
   if (!isOpen) return null;
@@ -24,8 +24,7 @@ const AddEvent = ({ isOpen, onClose, onEventAdded }) => {
     if (result instanceof Error || result.errors) {
       setError("Failed to add event. Please try again.");
     } else {
-      alert("Event added successfully!");
-      onEventAdded(); // Notify parent to refresh events
+      onEventAdded();
     }
 
     setLoading(false);

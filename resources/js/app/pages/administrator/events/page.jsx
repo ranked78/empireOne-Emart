@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import MainLayout from '../layout';
 import Events from '@/app/components/Events';
-import AddEvent from '@/app/components/AddEvent';
+import AddEvent from '@/app/pages/administrator/_sections/add-event';
 import { get_events_service } from '@/app/services/events-service';
 
 
@@ -10,7 +10,7 @@ export default function EventsPage() {
     const [isPopupOpen, setIsPopupOpen] = useState(false);
 
     const handleOpenPopup = (e) => {
-        e.preventDefault(); // Prevent default link behavior
+        e.preventDefault();
         setIsPopupOpen(true);
     };
 
