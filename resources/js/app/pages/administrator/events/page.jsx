@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import MainLayout from '../layout';
 import Events from '@/app/components/Events';
-import AddEvent from '../_sections/add-event';
 import { fetch_events_thunk } from './redux/events-thunk';
+import AddEvent from './sections/add-event-section';
 
 export default function EventsPage() {
     const dispatch = useDispatch();
