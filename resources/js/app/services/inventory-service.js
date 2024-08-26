@@ -26,4 +26,15 @@ export async function update_inventory_service(data) {
     } catch (error) {
         return error;
     }
+
+    
+}
+
+export async function delete_inventory_service(id) {
+    try {
+        const res = await axios.delete(`/api/inventory/${id}`);
+        return res.data;
+    } catch (error) {
+        return error;
+    }
 }
