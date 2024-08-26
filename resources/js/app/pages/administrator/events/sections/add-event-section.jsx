@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { add_event_thunk } from "../redux/events-thunk";
-import { setEventForm } from "../redux/events-slice";
+import { add_event_thunk } from "../redux/event-thunk";
+import { setEventForm } from "../redux/event-slice";
 
 const AddEvent = ({ isOpen, onClose, onEventAdded }) => {
     const dispatch = useDispatch();

@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\InventoryController;
-use App\Http\Controllers\EventsController;
+use App\Http\Controllers\EventController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,4 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::resource('inventory', InventoryController::class);
-Route::resource('events', EventsController::class);
+Route::resource('event', EventController::class);

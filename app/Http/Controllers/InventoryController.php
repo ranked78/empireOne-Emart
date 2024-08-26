@@ -23,22 +23,21 @@ class InventoryController extends Controller
         ], 200);
     }
 
-
-    public function destroy($id)
-    {
-        Inventory::where('id', $id)->delete();
-        $inventories = Inventory::get();
-        return response()->json([
-            'result' => $inventories
-        ], 200);
-    }
-
     public function update(Request $request, $id)
     {
         
         $inventory = Inventory::findOrFail($id);
         $inventory->update($request->all()); 
         $inventories = Inventory::all();
+        return response()->json([
+            'result' => $inventories
+        ], 200);
+    }
+
+    public function destroy($id)
+    {
+        Inventory::where('id', $id)->delete();
+        $inventories = Inventory::get();
         return response()->json([
             'result' => $inventories
         ], 200);

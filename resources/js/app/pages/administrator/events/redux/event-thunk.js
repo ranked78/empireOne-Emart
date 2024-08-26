@@ -1,6 +1,6 @@
 
-import { add_events_service, get_events_service } from "@/app/services/events-service";
-import { setEvents, addEvent } from "./events-slice";
+import { add_events_service, get_events_service } from "@/app/services/event-service";
+import { setEvents, addEvent } from "./event-slice";
 
 export function fetch_events_thunk() {
     return async function (dispatch) {
