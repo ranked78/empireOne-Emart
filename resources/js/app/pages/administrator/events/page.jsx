@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import MainLayout from '../layout';
 import Events from '@/app/components/Events';
 import { fetch_events_thunk } from './redux/event-thunk';
-import AddEvent from './sections/add-event-section';
+import AddEvent from './sections/administrator-add-event-section';
 
 export default function EventsPage() {
     const dispatch = useDispatch();

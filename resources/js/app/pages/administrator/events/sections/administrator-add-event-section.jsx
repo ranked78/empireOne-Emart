@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { add_event_thunk } from "../redux/event-thunk";
 import { setEventForm } from "../redux/event-slice";
+import Input from "@/app/components/input";
+
 
 const AddEvent = ({ isOpen, onClose, onEventAdded }) => {
     const dispatch = useDispatch();
@@ -25,23 +27,24 @@ const AddEvent = ({ isOpen, onClose, onEventAdded }) => {
                 {error && <p className="text-red-500 mb-4">{error}</p>}
                 <form onSubmit={handleSubmit}>
                     <div className="mb-4">
-                        <label className="block text-sm font-medium mb-2">Event Title</label>
-                        <input
+                        <Input
                             type="text"
                             value={title}
                             onChange={(e) => setTitle(e.target.value)}
-                            className="w-full px-3 py-2 border rounded-lg"
+                            name="eventTitle"
+                            label="Event Title"
                             required
                         />
                     </div>
                     <div className="mb-4">
-                        <label className="block text-sm font-medium mb-2">Description</label>
-                        <textarea
+                        <Input
+                            type="text"
                             value={description}
                             onChange={(e) => setDescription(e.target.value)}
-                            className="w-full px-3 py-2 border rounded-lg"
+                            name="description"
+                            label="Description"
                             required
-                        ></textarea>
+                        />
                     </div>
                     <div className="flex justify-end">
                         <button
