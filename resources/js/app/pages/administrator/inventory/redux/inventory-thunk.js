@@ -1,5 +1,6 @@
 import {
     add_inventory_service,
+    delete_inventory_service,
     get_inventory_service,
     update_inventory_service,
 } from "@/app/services/inventory-service";
@@ -35,3 +36,14 @@ export function update_inventory_thunk() {
     };
 }
 
+
+export function delete_inventory_thunk(id) {
+    return async function (dispatch) {
+        try {
+            const response = await delete_inventory_service(id);
+            dispatch(inventorySlice.actions.setInventories(response.result));
+        } catch (error) {
+            console.error("Failed to delete inventory:", error);
+        }
+    };
+}
