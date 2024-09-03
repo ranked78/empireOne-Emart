@@ -1,21 +1,33 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { add_event_thunk } from "../redux/event-thunk";
+import { add_event_thunk, fetch_events_thunk } from "../redux/event-thunk";
 import { setEventForm } from "../redux/event-slice";
 import Input from "@/app/components/input";
+import store from "@/app/store/store";
 
 
-const AddEvent = ({ isOpen, onClose, onEventAdded }) => {
+const AddEvent = ({ isOpen, onClose }) => {
     const dispatch = useDispatch();
     const { loading, error } = useSelector((state) => state.events);
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
 
+    const handleEventAdded = () => {
+        store.dispatch(fetch_events_thunk()); // Refresh the event list after an event is added
+        handleClosePopup(); // Optionally close the popup
+    };
+
+    const handleClosePopup = () => {
+        setTitle(""); // Clear form fields when closing the popup
+        setDescription("");
+        onClose(); // Call the onClose prop to handle any additional logic
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         dispatch(setEventForm({ title, description }));
         await dispatch(add_event_thunk());
-        onEventAdded();
+        handleEventAdded();
     };
 
     if (!isOpen) return null;
@@ -55,7 +67,7 @@ const AddEvent = ({ isOpen, onClose, onEventAdded }) => {
                             {loading ? "Saving..." : "Save"}
                         </button>
                         <button
-                            onClick={onClose}
+                            onClick={handleClosePopup}
                             type="button"
                             className="px-3 py-2 bg-red-500 text-white rounded-lg"
                         >
