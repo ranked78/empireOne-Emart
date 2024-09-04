@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import MainLayout from '../layout';
-import Events from '@/app/components/Events';
+import Events from '@/app/components/events';
 import { fetch_events_thunk } from './redux/event-thunk';
 import AddEvent from './sections/administrator-add-event-section';
+import store from "@/app/store/store";
 
 export default function EventsPage() {
     const dispatch = useDispatch();
@@ -19,13 +20,8 @@ export default function EventsPage() {
         setIsPopupOpen(false);
     };
 
-    const handleEventAdded = () => {
-        dispatch(fetch_events_thunk()); // Refresh the event list after an event is added
-        handleClosePopup(); // Optionally close the popup
-    };
-
     useEffect(() => {
-        dispatch(fetch_events_thunk()); // Fetch events initially
+        store.dispatch(fetch_events_thunk()); // Fetch events initially
     }, [dispatch]);
 
     return (
@@ -38,7 +34,7 @@ export default function EventsPage() {
                 Add Events
             </a>
 
-            <AddEvent isOpen={isPopupOpen} onClose={handleClosePopup} onEventAdded={handleEventAdded} />
+            <AddEvent isOpen={isPopupOpen} onClose={handleClosePopup} />
 
             <Events events={events} />
         </MainLayout>
