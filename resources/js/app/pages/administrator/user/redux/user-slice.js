@@ -3,9 +3,9 @@ import { createSlice } from "@reduxjs/toolkit";
 export const usersSlice = createSlice({
     name: "users",
     initialState: {
-        userForm: {},      // Holds user form data
-        users: [],         // Stores list of users
-        updateForm: {}     // Holds data for user updates (if needed)
+        userForm: {},      
+        users: [],         
+        updateForm: {}     
     },
     reducers: {
         // Set the user form data
