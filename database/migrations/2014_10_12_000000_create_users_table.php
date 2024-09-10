@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->bigInteger('points');
             $table->string('position');
-            $table->bigInteger('phone');
+            $table->string('phone');
             $table->string('status');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

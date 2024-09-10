@@ -1,24 +1,33 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 export const eventsSlice = createSlice({
-    name: 'events',
+    name: "events",
     initialState: {
+        eventForm: {},
         events: [],
-        eventForm: {}, // This is for form data if needed
+        updateForm: {}
     },
     reducers: {
+        setEventForm: (state, action) => {
+            state.eventForm = action.payload;
+        },
         setEvents: (state, action) => {
             state.events = action.payload;
         },
-        addEvent: (state, action) => {
-            state.events.push(action.payload);
+        setUpdateForm: (state, action) => {
+            state.updateForm = action.payload;
         },
-        setEventForm: (state, action) => {
-            state.eventForm = action.payload;
+        addEvent: (state, action) => {
+            state.events.push(action.payload); // Add a new event to the list
         },
     },
 });
 
-export const { setEvents, addEvent, setEventForm } = eventsSlice.actions;
+export const { 
+    setEventForm, 
+    setEvents, 
+    setUpdateForm, 
+    addEvent 
+} = eventsSlice.actions;
 
 export default eventsSlice.reducer;
