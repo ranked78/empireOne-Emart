@@ -7,48 +7,44 @@ import MainLayout from "../layout";
 
 
 export default function UserPage() {
-    const { events } = useSelector((state) => state.event);
+    const { users } = useSelector((state) => state.users);
     const [dataChecked, setDataChecked] = useState([]);
     const columns = [
         {
-            title: "Equipment Type",
-            key: "equipment_type",
+            title: "Employee ID",
+            key: "emp_id",
         },
         {
-            title: "Assigned",
-            key: "assigned",
+            title: "Position ID",
+            key: "position_id",
         },
         {
-            title: "Brand",
-            key: "brand",
+            title: "Site ID",
+            key: "site_id",
         },
         {
-            title: "Model",
-            key: "model",
+            title: "Name",
+            key: "name",
         },
         {
-            title: "Serial",
-            key: "serial",
+            title: "Email",
+            key: "email",
         },
         {
-            title: "Account",
-            key: "account",
+            title: "Points",
+            key: "points",
         },
         {
-            title: "Site",
-            key: "site",
+            title: "Position",
+            key: "position",
+        },
+        {
+            title: "Phone",
+            key: "phone",
         },
         {
             title: "Status",
             key: "status",
-        },
-        {
-            title: "Cost",
-            key: "cost",
-        },
-        {
-            title: "Date Received",
-            key: "date_received",
         },
         {
             title: "Action",
@@ -57,7 +53,7 @@ export default function UserPage() {
     ];
 
 
-    const data = events.map((res) => ({
+    const data = users.map((res) => ({
         ...res,
         // action: (
         //     <div className="flex gap-4">
@@ -66,6 +62,10 @@ export default function UserPage() {
         //     </div>
         // ),
     }));
+
+    useEffect(() => {
+        store.dispatch(get_user_thunk());
+    }, []);
 
     return (
 

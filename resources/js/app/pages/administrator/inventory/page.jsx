@@ -60,12 +60,12 @@ export default function InventoryPage() {
     ];
     const data = inventories.map((res) => ({
         ...res,
-        // action: (
-        //     <div className="flex gap-4">
-        //         <EditTnventorySection datas={res} />
-        //         <DeleteInventorySection datas={res} />
-        //     </div>
-        // ),
+        action: (
+            <div className="flex gap-4">
+                <EditTnventorySection datas={res} />
+                <DeleteInventorySection datas={res} />
+            </div>
+        ),
     }));
 
     useEffect(() => {

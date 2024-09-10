@@ -1,17 +1,20 @@
-import { add_users_service, get_users_service } from "@/app/services/user-service";
-import { setUsers, addEvent } from "./user-slice";
+import { 
+    add_user_service, 
+    get_user_service 
+} from "@/app/services/user-service";
+import { setUsers, addUser } from "./user-slice";
 
-export function fetch_users_thunk() {
+export function get_user_thunk() {
     return async function (dispatch) {
-        const response = await get_users_service();
+        const response = await get_user_service();
         await dispatch(setUsers(response.result));
     };
 }
 
-export function add_event_thunk() {
+export function add_user_thunk() {
     return async function (dispatch, getState) {
-        const eventData = getState().users.eventForm; // Assuming eventForm is managed in the state
-        const response = await add_users_service(eventData);
-        await dispatch(addUsers(response.result));
+        const userFormData = getState().users.userForm; // Corrected to 'userForm'
+        const response = await add_user_service(userFormData);
+        await dispatch(addUser(response.result));
     };
 }

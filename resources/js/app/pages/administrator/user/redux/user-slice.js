@@ -4,21 +4,21 @@ export const usersSlice = createSlice({
     name: 'users',
     initialState: {
         users: [],
-        eventForm: {}, // This is for form data if needed
+        userForm: {}, // This is for form data if needed
     },
     reducers: {
         setUsers: (state, action) => {
             state.users = action.payload;
         },
-        addEvent: (state, action) => {
+        addUser: (state, action) => {
             state.users.push(action.payload);
         },
-        setEventForm: (state, action) => {
-            state.eventForm = action.payload;
+        setUserForm: (state, action) => {
+            state.userForm = action.payload;
         },
     },
 });
 
-export const { setUsers, addEvent, setEventForm } = usersSlice.actions;
+export const { setUsers, addUser, setUserForm } = usersSlice.actions;
 
 export default usersSlice.reducer;

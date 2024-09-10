@@ -1,7 +1,7 @@
 import { add_events_service, get_events_service } from "@/app/services/event-service";
 import { setEvents, addEvent } from "./event-slice";
 
-export function get_events_thunk() {
+export function get_event_thunk() {
     return async function (dispatch) {
         const response = await get_events_service();
         await dispatch(setEvents(response.result));
