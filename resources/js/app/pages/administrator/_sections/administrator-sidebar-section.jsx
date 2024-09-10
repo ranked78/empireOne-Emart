@@ -19,12 +19,12 @@ export default function AdministratorSidebarSection() {
             icon: HomeIcon,
             current: path == "dashboard",
         },
-        // {
-        //     name: "Inventory",
-        //     href: "/administrator/inventory",
-        //     icon: UsersIcon,
-        //     current: path == "inventory",
-        // },
+        {
+            name: "Inventory",
+            href: "/administrator/inventory",
+            icon: UsersIcon,
+            current: path == "inventory",
+        },
         { name: "Users", href: "#", icon: UsersIcon, current: false },
         { name: "Reward", href: "#", icon: GiftIcon, current: false },
         { name: "Reward Claimed", href: "#", icon: GiftTopIcon, current: false },
@@ -32,7 +32,7 @@ export default function AdministratorSidebarSection() {
         { name: "Engagement Activities", href: "#", icon: PresentationChartLineIcon, current: false },
         {
             name: "Event Activities",
-            href: "/administrator/events",
+            href: "/administrator/event",
             icon: CalendarDaysIcon,
             current: path == "events",
         }
