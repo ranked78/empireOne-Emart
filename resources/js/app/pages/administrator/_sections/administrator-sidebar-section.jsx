@@ -1,16 +1,13 @@
 import Sidebar from "@/app/components/sidebar";
 import React from "react";
 import {
-    CalendarIcon,
-    ChartPieIcon,
-    DocumentDuplicateIcon,
-    FolderIcon,
     HomeIcon,
     UsersIcon,
     CalendarDaysIcon,
     GiftIcon,
-    ChatBubbleLeftRightIcon,
-    NewspaperIcon
+    GiftTopIcon,
+    UserIcon,
+    PresentationChartLineIcon
 } from "@heroicons/react/24/outline";
 
 export default function AdministratorSidebarSection() {
@@ -28,21 +25,19 @@ export default function AdministratorSidebarSection() {
             icon: UsersIcon,
             current: path == "inventory",
         },
-        { name: "Account Rewards", href: "#", icon: GiftIcon, current: false },
-        { name: "Engagement Activities", href: "#", icon: ChatBubbleLeftRightIcon, current: false },
-        { name: "News Feed", href: "#", icon: NewspaperIcon, current: false },
-        { name: "Projects", href: "#", icon: FolderIcon, current: false },
-        { name: "Calendar", href: "#", icon: CalendarIcon, current: false },
-        {
-            name: "Documents",
-            href: "#",
-            icon: DocumentDuplicateIcon,
-            current: false,
+        { 
+            name: "Users", 
+            href: "/administrator/user", 
+            icon: UsersIcon, 
+            current: false 
         },
-        { name: "Reports", href: "#", icon: ChartPieIcon, current: false },
+        { name: "Reward", href: "#", icon: GiftIcon, current: false },
+        { name: "Reward Claimed", href: "#", icon: GiftTopIcon, current: false },
+        { name: "Account", href: "#", icon: UserIcon, current: false },
+        { name: "Engagement Activities", href: "#", icon: PresentationChartLineIcon, current: false },
         {
-            name: "Events",
-            href: "/administrator/events",
+            name: "Event Activities",
+            href: "/administrator/event",
             icon: CalendarDaysIcon,
             current: path == "events",
         }

@@ -9,7 +9,7 @@ import MainLayout from "../layout";
 
 import DeleteInventorySection from "./sections/delete-inventory-section";
 
-export default function InventoryPage({ auth }) {
+export default function InventoryPage() {
     const { inventories } = useSelector((state) => state.inventory);
     const [dataChecked, setDataChecked] = useState([]);
     const columns = [

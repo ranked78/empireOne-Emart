@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import MainLayout from '../layout';
 import Events from '@/app/components/events';
-import { fetch_events_thunk } from './redux/event-thunk';
+import { get_event_thunk } from './redux/event-thunk';
 import AddEvent from './sections/administrator-add-event-section';
 import store from "@/app/store/store";
 
@@ -21,7 +21,7 @@ export default function EventsPage() {
     };
 
     useEffect(() => {
-        store.dispatch(fetch_events_thunk()); // Fetch events initially
+        store.dispatch(get_event_thunk()); // get events initially
     }, [dispatch]);
 
     return (
