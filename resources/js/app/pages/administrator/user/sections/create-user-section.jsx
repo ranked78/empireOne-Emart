@@ -99,7 +99,7 @@ export default function CreateUserSection() {
                             name="name"
                         />
                         <Input
-                            type="text"
+                            type="email"
                             onChange={(e) =>
                                 dispatch(
                                     setUserForm({

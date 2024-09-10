@@ -8,15 +8,12 @@ export const usersSlice = createSlice({
         updateForm: {}     
     },
     reducers: {
-        // Set the user form data
         setUserForm: (state, action) => {
             state.userForm = action.payload;
         },
-        // Set the list of users
         setUsers: (state, action) => {
             state.users = action.payload;
         },
-        // Set the form data for updating a user
         setUpdateForm: (state, action) => {
             state.updateForm = action.payload;
         },
