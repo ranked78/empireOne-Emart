@@ -26,4 +26,15 @@ export async function update_user_service(data) {
     } catch (error) {
         return error;
     }
+
+    
+}
+
+export async function delete_user_service(id) {
+    try {
+        const res = await axios.delete(`/api/user/${id}`);
+        return res.data;
+    } catch (error) {
+        return error;
+    }
 }

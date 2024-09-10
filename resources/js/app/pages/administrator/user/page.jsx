@@ -5,8 +5,8 @@ import { get_user_thunk } from "./redux/user-thunk"
 import { useSelector } from "react-redux";
 import MainLayout from "../layout";
 import CreateUserSection from "./sections/create-user-section";
-import EditTnventorySection from "../inventory/sections/edit-inventory-section";
-import DeleteInventorySection from "../inventory/sections/delete-inventory-section";
+import EditUserSection from "./sections/edit-user-section";
+import DeleteUserSection from "./sections/delete-user-section";
 
 
 export default function UserPage() {
@@ -60,8 +60,8 @@ export default function UserPage() {
         ...res,
         action: (
             <div className="flex gap-4">
-                <EditTnventorySection datas={res} />
-                <DeleteInventorySection datas={res} />
+                <EditUserSection datas={res} />
+                <DeleteUserSection datas={res} />
             </div>
         ),
     }));

@@ -10,7 +10,6 @@ import { update_inventory_thunk } from "../redux/inventory-thunk";
 export default function EditTnventorySection({ datas }) {
     const [open, setOpen] = useState(false);
     const { updateForm } = useSelector((state) => state.inventory);
-    // const [data, setUpdateForm] = useState({});
     const dispatch = useDispatch();
     useEffect(() => {
         if (open) {

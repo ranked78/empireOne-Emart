@@ -2,7 +2,7 @@ import {
     add_user_service, 
     get_user_service, 
     update_user_service, 
-    // delete_user_service 
+    delete_user_service 
 } from "@/app/services/user-service";
 import { usersSlice } from "./user-slice";
 

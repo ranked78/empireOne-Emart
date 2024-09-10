@@ -18,7 +18,6 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
-    
         $user = User::create([
             'emp_id' => $request->emp_id,
             'position_id' => $request->position_id,
@@ -37,5 +36,38 @@ class UserController extends Controller
         return response()->json([
             'result' => $users
         ], 200);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $user = User::findOrFail($id);
+
+        $updateData = $request->only([
+            'emp_id', 'position_id', 'site_id', 'name', 'email', 'points', 'position', 'phone', 'status'
+        ]);
+
+        
+        if ($request->has('password') && !empty($request->password)) {
+            $updateData['password'] = Hash::make($request->password);
         }
+
+        // Update user
+        $user->update($updateData);
+
+        $users = User::all();
+
+        return response()->json([
+            'result' => $users
+        ], 200);
+    }
+
+    public function destroy($id)
+    {
+        User::where('id', $id)->delete();
+        $users = User::get();
+        return response()->json([
+            'result' => $users
+        ], 200);
+    }
+    
 }
