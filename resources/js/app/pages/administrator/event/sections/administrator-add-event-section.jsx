@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { add_event_thunk, fetch_events_thunk } from "../redux/event-thunk";
+import { add_event_thunk, get_events_thunk } from "../redux/event-thunk";
 import { setEventForm } from "../redux/event-slice";
 import Input from "@/app/components/input";
 import store from "@/app/store/store";
@@ -13,7 +13,7 @@ const AddEvent = ({ isOpen, onClose }) => {
     const [description, setDescription] = useState("");
 
     const handleEventAdded = () => {
-        store.dispatch(fetch_events_thunk()); // Refresh the event list after an event is added
+        store.dispatch(get_events_thunk()); // Refresh the event list after an event is added
         handleClosePopup(); // Optionally close the popup
     };
 

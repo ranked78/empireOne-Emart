@@ -1,16 +1,13 @@
 import Table from "@/app/components/table";
 import React, { useEffect, useState } from "react";
-import CreateInventorySection from "./sections/create-inventory-section";
 import store from "@/app/store/store";
-import { get_inventory_thunk } from "./redux/inventory-thunk";
+import { get_user_thunk } from "./redux/user-thunk"
 import { useSelector } from "react-redux";
-import EditTnventorySection from "./sections/edit-inventory-section";
 import MainLayout from "../layout";
 
-import DeleteInventorySection from "./sections/delete-inventory-section";
 
-export default function InventoryPage() {
-    const { inventories } = useSelector((state) => state.inventory);
+export default function UserPage() {
+    const { events } = useSelector((state) => state.event);
     const [dataChecked, setDataChecked] = useState([]);
     const columns = [
         {
@@ -58,7 +55,9 @@ export default function InventoryPage() {
             key: "action",
         },
     ];
-    const data = inventories.map((res) => ({
+
+
+    const data = events.map((res) => ({
         ...res,
         // action: (
         //     <div className="flex gap-4">
@@ -68,12 +67,9 @@ export default function InventoryPage() {
         // ),
     }));
 
-    useEffect(() => {
-        store.dispatch(get_inventory_thunk());
-    }, []);
     return (
+
         <MainLayout>
-            <CreateInventorySection />
             <Table
                 setDataChecked={setDataChecked}
                 dataChecked={dataChecked}
@@ -82,5 +78,7 @@ export default function InventoryPage() {
                 isCheckbox={true}
             />
         </MainLayout>
+
     );
+
 }
