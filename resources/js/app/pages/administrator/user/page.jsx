@@ -10,7 +10,7 @@ import DeleteUserSection from "./sections/delete-user-section";
 
 
 export default function UserPage() {
-    const { users } = useSelector((state) => state.users);
+    const { users } = useSelector((state) => state.user);
     const [dataChecked, setDataChecked] = useState([]);
     const columns = [
         {

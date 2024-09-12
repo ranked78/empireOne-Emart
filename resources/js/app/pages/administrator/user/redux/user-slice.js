@@ -1,11 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const usersSlice = createSlice({
-    name: "users",
+const path = window.location.hash.substring(1); // Get the hash without the first character
+const hash = path.split("&")[0];
+
+export const userSlice = createSlice({
+    name: "user",
     initialState: {
-        userForm: {},      
-        users: [],         
-        updateForm: {}     
+        userForm: {},
+        users: [],
+        updateForm: {},
     },
     reducers: {
         setUserForm: (state, action) => {
@@ -20,5 +23,10 @@ export const usersSlice = createSlice({
     },
 });
 
-export const { setUserForm, setUsers, setUpdateForm } = usersSlice.actions;
-export default usersSlice.reducer;
+export const { 
+    setUserForm, 
+    setUsers, 
+    setUpdateForm 
+} = userSlice.actions;
+
+export default userSlice.reducer;

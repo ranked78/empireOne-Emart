@@ -4,10 +4,11 @@ import MainLayout from '../layout';
 import { get_event_thunk } from './redux/event-thunk';
 import AddEvent from './sections/administrator-add-event-section';
 import store from "@/app/store/store";
+import CreateEventSection from './sections/create-event-section';
 
 export default function EventsPage() {
     const dispatch = useDispatch();
-    const { events } = useSelector((state) => state.events);
+    const { events } = useSelector((state) => state.event);
     const [isPopupOpen, setIsPopupOpen] = useState(false);
 
     const handleOpenPopup = (e) => {
@@ -25,7 +26,7 @@ export default function EventsPage() {
 
     return (
         <MainLayout>
-            <a
+            {/* <a
                 href="#"
                 onClick={handleOpenPopup}
                 className="mt-10 ml-40 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-indigo-600 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
@@ -33,12 +34,14 @@ export default function EventsPage() {
                 Add Events
             </a>
 
-            <AddEvent isOpen={isPopupOpen} onClose={handleClosePopup} />
+            <AddEvent isOpen={isPopupOpen} onClose={handleClosePopup} /> */}
+
+            <CreateEventSection/>
 
             <div className='flex flex-wrap gap-4 place-content-start mt-12 ml-44'>
                 {events.map((event) => (
                     <div
-                        key={event.id}
+                        // key={event.id}
                         className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
                     >
                         <a href="#">

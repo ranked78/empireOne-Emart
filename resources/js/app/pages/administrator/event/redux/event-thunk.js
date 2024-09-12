@@ -1,53 +1,48 @@
 import {
-    add_events_service,
-    get_events_service,
-    update_events_service,
-    // delete_events_service
+    add_event_service,
+    delete_event_service,
+    get_event_service,
+    update_event_service,
 } from "@/app/services/event-service";
-import { eventsSlice } from "./event-slice";
-
-export function get_event_thunk() {
-    return async function (dispatch) {
-        try {
-            const response = await get_events_service();
-            dispatch(eventsSlice.actions.setEvents(response.result)); // Dispatch the action to store the events
-        } catch (error) {
-            console.error("Failed to fetch events", error); // Handle any errors
-        }
-    };
-}
+import { eventSlice } from "./event-slice";
 
 export function add_event_thunk() {
     return async function (dispatch, getState) {
-        try {
-            const eventData = getState().events.eventForm; // Get the event form data from the Redux state
-            const response = await add_events_service(eventData); // Make the API call to add the event
-            dispatch(eventsSlice.actions.addEvent(response.result)); // Dispatch the action to add the new event
-        } catch (error) {
-            console.error("Failed to add event", error); // Handle any errors
-        }
+        const data = getState().event.eventForm;
+        const response = await add_event_service(data);
+        await dispatch(
+            eventSlice.actions.setEvents(response.result)
+        );
+    };
+}
+
+export function get_event_thunk() {
+    return async function (dispatch, getState) {
+        const events = getState().event.events;
+        const response = await get_event_service();
+        await dispatch(
+            eventSlice.actions.setEvents(response.result)
+        );
     };
 }
 
 export function update_event_thunk() {
     return async function (dispatch, getState) {
-        try {
-            const updateForm = getState().events.updateForm;
-            const response = await update_events_service(updateForm);
-            dispatch(eventsSlice.actions.setEvents(response.result)); // Update the events list
-        } catch (error) {
-            console.error("Failed to update event", error); // Handle any errors
-        }
+        const updateForm = getState().event.updateForm;
+        const response = await update_event_service(updateForm);
+        await dispatch(
+            eventSlice.actions.setEvents(response.result)
+        );
     };
 }
 
 export function delete_event_thunk(id) {
     return async function (dispatch) {
         try {
-            const response = await delete_events_service(id);
-            dispatch(eventsSlice.actions.setEvents(response.result)); // Update the events list
+            const response = await delete_event_service(id);
+            dispatch(eventSlice.actions.setEvents(response.result));
         } catch (error) {
-            console.error("Failed to delete event:", error); // Handle any errors
+            console.error("Failed to delete event:", error);
         }
     };
 }
