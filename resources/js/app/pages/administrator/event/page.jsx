@@ -26,16 +26,16 @@ export default function EventsPage() {
                 <DeleteEventSection datas={res} />
             </div>
         ),
-      }));
+    }));
 
     return (
         <MainLayout>
 
-            <CreateEventSection/>
+            <CreateEventSection />
 
-            <EventCard 
-            datas={data} 
-            columns={columns} 
+            <EventCard
+                datas={data}
+                columns={columns}
             />
 
         </MainLayout>
