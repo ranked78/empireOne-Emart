@@ -13,7 +13,7 @@ export default function EventsPage() {
     const { events } = useSelector((state) => state.event);
 
     useEffect(() => {
-        store.dispatch(get_event_thunk()); // get events initially
+        store.dispatch(get_event_thunk());
     }, [dispatch]);
 
     const columns = ['name', 'event_date', 'points', 'description', 'read_more', 'action'];
