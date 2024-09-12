@@ -7,7 +7,8 @@ import {
     GiftIcon,
     GiftTopIcon,
     UserIcon,
-    PresentationChartLineIcon
+    PresentationChartLineIcon,
+    GlobeAsiaAustraliaIcon,
 } from "@heroicons/react/24/outline";
 
 export default function AdministratorSidebarSection() {
@@ -25,21 +26,32 @@ export default function AdministratorSidebarSection() {
             icon: UsersIcon,
             current: path == "inventory",
         },
-        { 
-            name: "Users", 
-            href: "/administrator/user", 
-            icon: UsersIcon, 
-            current: false 
+        {
+            name: "Users",
+            href: "/administrator/user",
+            icon: UsersIcon,
+            current: false
         },
         { name: "Reward", href: "#", icon: GiftIcon, current: false },
         { name: "Reward Claimed", href: "#", icon: GiftTopIcon, current: false },
-        { name: "Account", href: "#", icon: UserIcon, current: false },
+        {
+            name: "Accounts",
+            href: "/administrator/account",
+            icon: UserIcon,
+            current: false
+        },
         { name: "Engagement Activities", href: "#", icon: PresentationChartLineIcon, current: false },
         {
             name: "Event Activities",
             href: "/administrator/event",
             icon: CalendarDaysIcon,
-            current: path == "events",
+            current: path == "event",
+        },
+        {
+            name: "Site",
+            href: "/administrator/site",
+            icon: GlobeAsiaAustraliaIcon,
+            current: path == "site",
         }
     ];
     return (

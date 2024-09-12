@@ -3,19 +3,19 @@ import { createSlice } from "@reduxjs/toolkit";
 const path = window.location.hash.substring(1); // Get the hash without the first character
 const hash = path.split("&")[0];
 
-export const userSlice = createSlice({
-    name: "user",
+export const siteSlice = createSlice({
+    name: "site",
     initialState: {
-        userForm: {},
-        users: [],
+        siteForm: {},
+        sites: [],
         updateForm: {},
     },
     reducers: {
-        setUserForm: (state, action) => {
-            state.userForm = action.payload;
+        setSiteForm: (state, action) => {
+            state.siteForm = action.payload;
         },
-        setUsers: (state, action) => {
-            state.users = action.payload;
+        setSites: (state, action) => {
+            state.sites = action.payload;
         },
         setUpdateForm: (state, action) => {
             state.updateForm = action.payload;
@@ -24,9 +24,9 @@ export const userSlice = createSlice({
 });
 
 export const { 
-    setUserForm, 
-    setUsers, 
+    setSiteForm, 
+    setSites, 
     setUpdateForm 
-} = userSlice.actions;
+} = siteSlice.actions;
 
-export default userSlice.reducer;
+export default siteSlice.reducer;

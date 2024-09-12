@@ -12,7 +12,7 @@ export default function CreateUserSection() {
     const [confirmPassword, setConfirmPassword] = useState(""); // State for confirm password input
     const [passwordError, setPasswordError] = useState(""); // State to store password mismatch error
     const dispatch = useDispatch();
-    const { userForm } = useSelector((state) => state.users);
+    const { userForm } = useSelector((state) => state.user);
 
     function submit_event(e) {
         e.preventDefault();

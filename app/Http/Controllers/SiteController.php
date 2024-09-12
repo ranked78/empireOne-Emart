@@ -2,44 +2,46 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Event;
+use App\Models\Site;
 use Illuminate\Http\Request;
 
-class EventController extends Controller
+class SiteController extends Controller
 {
     public function index()
     {
-        $events = Event::get();
+        $sites = Site::get();
         return response()->json([
-            'result' => $events
+            'result' => $sites
         ], 200);
     }
+
     public function store(Request $request)
     {
-        Event::create($request->all());
-        $events = Event::get();
+        Site::create($request->all());
+        $sites = Site::get();
         return response()->json([
-            'result' => $events
+            'result' => $sites
         ], 200);
     }
 
     public function update(Request $request, $id)
     {
         
-        $event = Event::findOrFail($id);
-        $event->update($request->all()); 
-        $events = Event::all();
+        $site = Site::findOrFail($id);
+        $site->update($request->all()); 
+        $sites = Site::all();
         return response()->json([
-            'result' => $events
+            'result' => $sites
         ], 200);
     }
 
     public function destroy($id)
     {
-        Event::where('id', $id)->delete();
-        $events = Event::get();
+        Site::where('id', $id)->delete();
+        $sites = Site::get();
         return response()->json([
-            'result' => $events
+            'result' => $sites
         ], 200);
     }
+
 }

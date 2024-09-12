@@ -53,6 +53,12 @@ Route::middleware('auth:sanctum')->prefix('administrator')->group(function () {
     Route::get('/user', function () {
         return Inertia::render('administrator/user/page');
     });
+    Route::get('/account', function () {
+        return Inertia::render('administrator/account/page');
+    });
+    Route::get('/site', function () {
+        return Inertia::render('administrator/site/page');
+    });
 });
 
 

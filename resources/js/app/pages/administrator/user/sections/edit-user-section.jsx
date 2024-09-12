@@ -8,9 +8,9 @@ import { update_user_thunk } from "../redux/user-thunk";
 
 export default function EditUserSection({ datas }) {
     const [open, setOpen] = useState(false);
-    const [confirmPassword, setConfirmPassword] = useState(""); // State for confirm password input
-    const [passwordError, setPasswordError] = useState(""); // State for password error
-    const { updateForm } = useSelector((state) => state.users);
+    const [confirmPassword, setConfirmPassword] = useState("");
+    const [passwordError, setPasswordError] = useState(""); 
+    const { updateForm } = useSelector((state) => state.user);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -27,7 +27,7 @@ export default function EditUserSection({ datas }) {
             setPasswordError("Passwords do not match.");
             return;
         }
-        setPasswordError(""); // Clear any previous errors
+        setPasswordError("");
         store.dispatch(update_user_thunk());
         setOpen(false);
     }

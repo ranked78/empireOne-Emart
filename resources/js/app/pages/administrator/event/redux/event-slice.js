@@ -1,11 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const eventsSlice = createSlice({
-    name: "events",
+const path = window.location.hash.substring(1); // Get the hash without the first character
+const hash = path.split("&")[0];
+
+export const eventSlice = createSlice({
+    name: "event",
     initialState: {
         eventForm: {},
         events: [],
-        updateForm: {}
+        updateForm: {},
     },
     reducers: {
         setEventForm: (state, action) => {
@@ -17,17 +20,13 @@ export const eventsSlice = createSlice({
         setUpdateForm: (state, action) => {
             state.updateForm = action.payload;
         },
-        addEvent: (state, action) => {
-            state.events.push(action.payload); // Add a new event to the list
-        },
     },
 });
 
 export const { 
     setEventForm, 
     setEvents, 
-    setUpdateForm, 
-    addEvent 
-} = eventsSlice.actions;
+    setUpdateForm 
+} = eventSlice.actions;
 
-export default eventsSlice.reducer;
+export default eventSlice.reducer;

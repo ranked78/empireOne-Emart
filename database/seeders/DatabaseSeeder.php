@@ -14,9 +14,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        \App\Models\Account::factory(10)->create();
 
- User::factory()->create([
+        User::factory()->create([
             'emp_id' => 123123,
             'position_id' => 321321,
             'site_id' => 1231231,
@@ -28,5 +28,7 @@ class DatabaseSeeder extends Seeder
             'status' => 'single',
             'password' => Hash::make('password'),
         ]);
+
+
     }
 }

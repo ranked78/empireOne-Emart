@@ -4,7 +4,7 @@ import CreateInventorySection from "./sections/create-inventory-section";
 import store from "@/app/store/store";
 import { get_inventory_thunk } from "./redux/inventory-thunk";
 import { useSelector } from "react-redux";
-import EditTnventorySection from "./sections/edit-inventory-section";
+import EditInventorySection from "./sections/edit-inventory-section";
 import MainLayout from "../layout";
 
 import DeleteInventorySection from "./sections/delete-inventory-section";
@@ -12,6 +12,7 @@ import DeleteInventorySection from "./sections/delete-inventory-section";
 export default function InventoryPage() {
     const { inventories } = useSelector((state) => state.inventory);
     const [dataChecked, setDataChecked] = useState([]);
+    
     const columns = [
         {
             title: "Equipment Type",
@@ -62,7 +63,7 @@ export default function InventoryPage() {
         ...res,
         action: (
             <div className="flex gap-4">
-                <EditTnventorySection datas={res} />
+                <EditInventorySection datas={res} />
                 <DeleteInventorySection datas={res} />
             </div>
         ),
