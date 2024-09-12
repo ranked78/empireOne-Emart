@@ -49,10 +49,59 @@ export default function CreateEventSection() {
                                     })
                                 )
                             }
-                            label="title"
-                            value={eventForm?.title ?? ""}
-                            name="title"
+                            label="Name"
+                            value={eventForm?.name ?? ""}
+                            name="name"
                         />
+                        <Input
+                            type="number"
+                            onChange={(e) =>
+                                dispatch(
+                                    setEventForm({
+                                        ...eventForm,
+                                        [e.target.name]: e.target.value,
+                                    })
+                                )
+                            }
+                            label="Site ID"
+                            value={eventForm?.site_id ?? ""}
+                            name="site_id"
+                        />
+                    </div>
+
+                    <div className="flex w-full gap-5">
+                        <Input
+                            type="date"
+                            onChange={(e) =>
+                                dispatch(
+                                    setEventForm({
+                                        ...eventForm,
+                                        [e.target.name]: e.target.value,
+                                    })
+                                )
+                            }
+                            label="Event Date"
+                            value={eventForm?.event_date ?? ""}
+                            name="event_date"
+                        />
+
+                        <Input
+                            type="number"
+                            onChange={(e) =>
+                                dispatch(
+                                    setEventForm({
+                                        ...eventForm,
+                                        [e.target.name]: e.target.value,
+                                    })
+                                )
+                            }
+                            label="Points"
+                            value={eventForm?.points ?? ""}
+                            name="points"
+                        />
+                    </div>
+
+                    <div className="flex w-full gap-5">
                         <Input
                             type="text"
                             onChange={(e) =>

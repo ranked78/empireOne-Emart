@@ -27,7 +27,7 @@ export default function EditUserSection({ datas }) {
             setPasswordError("Passwords do not match.");
             return;
         }
-        setPasswordError(""); // Clear any previous errors
+        setPasswordError("");
         store.dispatch(update_user_thunk());
         setOpen(false);
     }

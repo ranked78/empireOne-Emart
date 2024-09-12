@@ -36,6 +36,7 @@ export default function AccountPage() {
     ),
   }));
 
+
   useEffect(() => {
     store.dispatch(get_account_thunk());
   }, []);

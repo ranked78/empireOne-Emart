@@ -22,6 +22,8 @@ export default function EditAccountSection({ datas }) {
         store.dispatch(update_account_thunk());
         setOpen(false);
     }
+
+
     return (
         <div>
             <button
