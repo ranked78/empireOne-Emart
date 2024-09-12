@@ -51,7 +51,7 @@ export default function EditEventSection({ datas }) {
                             value={updateForm?.name ?? ""}
                             name="name"
                         />
-                         <Input
+                        <Input
                             type="number"
                             onChange={(e) =>
                                 dispatch(
@@ -68,7 +68,7 @@ export default function EditEventSection({ datas }) {
                     </div>
 
                     <div className="flex w-full gap-5">
-                    <Input
+                        <Input
                             type="date"
                             onChange={(e) =>
                                 dispatch(
@@ -82,6 +82,24 @@ export default function EditEventSection({ datas }) {
                             value={updateForm?.event_date ?? ""}
                             name="event_date"
                         />
+
+                        <Input
+                            type="number"
+                            onChange={(e) =>
+                                dispatch(
+                                    setUpdateForm({
+                                        ...updateForm,
+                                        [e.target.name]: e.target.value,
+                                    })
+                                )
+                            }
+                            label="Points"
+                            value={updateForm?.points ?? ""}
+                            name="points"
+                        />
+                    </div>
+
+                    <div className="flex w-full gap-5">
                         <Input
                             type="text"
                             onChange={(e) =>
@@ -95,23 +113,6 @@ export default function EditEventSection({ datas }) {
                             label="Description"
                             value={updateForm?.description ?? ""}
                             name="description"
-                        />
-                    </div>
-
-                    <div className="flex w-full gap-5">
-                    <Input
-                            type="number"
-                            onChange={(e) =>
-                                dispatch(
-                                    setUpdateForm({
-                                        ...updateForm,
-                                        [e.target.name]: e.target.value,
-                                    })
-                                )
-                            }
-                            label="Points"
-                            value={updateForm?.points ?? ""}
-                            name="points"
                         />
                     </div>
 
