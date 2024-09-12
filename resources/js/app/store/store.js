@@ -5,6 +5,7 @@ import inventorySlice from '../pages/administrator/inventory/redux/inventory-sli
 import eventsSlice from '../pages/administrator/event/redux/event-slice';
 import usersSlice  from '../pages/administrator/user/redux/user-slice';
 import accountSlice from '../pages/administrator/account/redux/account-slice';
+import siteSlice from '../pages/administrator/site/redux/site-slice';
 const store = configureStore({
     reducer: {
          app: appSlice,
@@ -12,6 +13,7 @@ const store = configureStore({
          events: eventsSlice,
          users:usersSlice,
          account:accountSlice,
+         site:siteSlice,
     },
 });
 

@@ -45,13 +45,13 @@ export default function AdministratorSidebarSection() {
             name: "Event Activities",
             href: "/administrator/event",
             icon: CalendarDaysIcon,
-            current: path == "events",
+            current: path == "event",
         },
         {
             name: "Site",
-            href: "#",
+            href: "/administrator/site",
             icon: GlobeAsiaAustraliaIcon,
-            current: false,
+            current: path == "site",
         }
     ];
     return (
