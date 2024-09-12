@@ -7,7 +7,8 @@ import {
     GiftIcon,
     GiftTopIcon,
     UserIcon,
-    PresentationChartLineIcon
+    PresentationChartLineIcon,
+    GlobeAsiaAustraliaIcon,
 } from "@heroicons/react/24/outline";
 
 export default function AdministratorSidebarSection() {
@@ -45,6 +46,12 @@ export default function AdministratorSidebarSection() {
             href: "/administrator/event",
             icon: CalendarDaysIcon,
             current: path == "events",
+        },
+        {
+            name: "Site",
+            href: "#",
+            icon: GlobeAsiaAustraliaIcon,
+            current: false,
         }
     ];
     return (
